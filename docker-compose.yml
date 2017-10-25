@@ -5,6 +5,8 @@ services:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=toor
+    ports:
+      - "3306:3306"
   web:
     build: .
     image: myphp
@@ -16,3 +18,5 @@ networks:
   default:
     external:
       name: wordpress
+
+# vim: set expandtab tabstop=2:
