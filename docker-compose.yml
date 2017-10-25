@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+  web:
+    build: .
+    image: myphp
+    ports:
+      - "8000:80"
+    # depends_on:
+    #   - db
+networks:
+  default:
+    external:
+      name: wordpress
