@@ -14,8 +14,10 @@ services:
     image: myphp
     ports:
       - "8000:80"
-    # depends_on:
-    #   - db
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
 networks:
   default:
     external:
